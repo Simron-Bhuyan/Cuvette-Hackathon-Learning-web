@@ -8,35 +8,56 @@ import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {ProductComponent} from "./components/product/product.component";
 import {ThankyouComponent} from "./components/thankyou/thankyou.component";
 import { FooterComponent } from './components/footer/footer.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/login',pathMatch:'full'
+    path: '', 
+    redirectTo: '/home', 
+    pathMatch:'full'
   },
   {
-    path: 'home', component: HomeComponent
+    path: 'home', 
+    component: HomeComponent
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'login', 
+    canActivate: [AuthGuard],
+    component: LoginComponent
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'register', 
+    canActivate: [AuthGuard],
+    component: RegisterComponent
   },
   {
-    path: 'product', component: ProductComponent
+    path: 'product', 
+    canActivate: [AuthGuard],
+    component: ProductComponent
   },
   {
-    path: 'cart', component: CartComponent
+    path: 'cart', 
+    canActivate: [AuthGuard],
+    component: CartComponent
   },
   {
-    path: 'checkout', component: CheckoutComponent
+    path: 'checkout', 
+    canActivate: [AuthGuard],
+    component: CheckoutComponent
+
   },
   {
-    path: 'thankyou', component: ThankyouComponent
+    
+    path: 'thankyou', 
+    canActivate: [AuthGuard],
+    component: ThankyouComponent
+
   },
   {
-    path: 'footer', component: FooterComponent
+    path: 'footer', 
+    canActivate: [AuthGuard],
+    component: FooterComponent
   }
 
 ];

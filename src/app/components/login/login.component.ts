@@ -1,15 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserModel } from '../../models/user.model';
 
 @Component({
-  selector: 'mg-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginUserData = {
+    email: "",
+    password: ""
+  };
 
-  ngOnInit() {
+  roleUser: UserModel;
+
+  constructor(private authService: AuthService, private router: Router) {
+
+
+   }
+
+  ngOnInit(): void {
   }
+
+  loginUser(){
+    this.authService.loginUser(this.loginUserData).subscribe(
+      res => {
+        console.log(res);
+
+        localStorage.setItem('token', res.token);
+
+        this.router.navigate(['/home']);
+
+      },
+      err => console.log(err)
+
+    )
+
+
+    
+  }
+
+  
 
 }
