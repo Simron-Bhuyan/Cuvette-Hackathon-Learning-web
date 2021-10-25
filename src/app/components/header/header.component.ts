@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from "../../services/cart.service";
 import { CartModelServer } from "../../models/cart.model";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "mg-header",
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   cartData: CartModelServer;
   cartTotal: Number;
 
-  constructor(public cartService: CartService) {}
+  constructor(public cartService: CartService,public authService:AuthService) {}
 
   ngOnInit() {
     this.cartService.cartTotal$.subscribe((total) => {
