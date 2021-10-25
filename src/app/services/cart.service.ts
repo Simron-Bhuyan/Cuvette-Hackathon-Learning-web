@@ -307,6 +307,3 @@ interface OrderConfirmationResponse {
     numInCart: String
   }]
 }
-
-
-

@@ -73,6 +73,20 @@ a {
   -webkit-transition: 0.2s color;
   transition: 0.2s color;
 }
+.product .product-img img{
+  min-height: 350px;
+  max-height: 350px;
+ 
+}
+.reslog {
+  display: grid;
+  grid-template-columns: 6fr 1fr 1fr;
+}
+.reslog .signup img,
+.reslog .login img {
+  height: 30px;
+  padding: 3px;
+}
 
 a:hover, a:focus {
   color: #D10024;
@@ -290,10 +304,7 @@ textarea.input {
 /*----------------------------*\
 	Section
 \*----------------------------*/
-.container .logo img{
-  height: 70px;
-  padding-top: 5px;
-}
+
 .section {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -696,8 +707,7 @@ textarea.input {
   }
   .main-nav {
     margin: 0px;
-    display: flex;
-    flex: content;
+    float: none;
   }
   .main-nav>li {
     display: block;
@@ -711,15 +721,7 @@ textarea.input {
     color: #FFF;
   }
 }
-/* +++++++++++Register login++++++++++ */
-.reslog{
-  display: grid;
-  grid-template-columns: 6fr 1fr 1fr;
-}
-.reslog .signup img,.reslog .login img{
-  height: 30px;
-  padding: 3px;
-}
+
 /*=========================================================
 	04 -> CATEGORY SHOP
 ===========================================================*/
@@ -761,14 +763,9 @@ textarea.input {
 .shop .shop-img {
   position: relative;
   background-color: #E4E7ED;
-  height: 14rem;
   z-index: -1;
-  overflow: hidden;
 }
-.grid-shop{
-  display: grid;
-  grid-template-rows: auto auto auto;
-}
+
 .shop .shop-img>img {
   width: 100%;
   -webkit-transition: 0.2s all;
@@ -871,12 +868,11 @@ textarea.input {
 
 .product {
   position: relative;
-  margin-top: 5rem;
+  margin: 15px 0px;
   -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
-  height: 350px;
 }
 
 .product:hover {

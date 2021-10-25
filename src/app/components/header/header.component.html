@@ -4,13 +4,21 @@
   <div id="top-header">
     <div class="container">
       <ul class="header-links pull-left">
-        <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-        <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+        <li>
+          <a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a>
+        </li>
       </ul>
       <ul class="header-links pull-right">
         <!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
-        <li><a href="#"><i class="fa fa-user-o"></i> Profile</a></li>
+        <li>
+          <a href="#"><i class="fa fa-user-o"></i> Profile</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -26,7 +34,10 @@
         <div class="col-md-6">
           <div class="header-logo">
             <a routerLink="/" class="logo">
-              <img src="../../../assets/images/undraw_professor_8lrt.svg" alt="">
+              <img
+                src="../../../assets/images/undraw_professor_8lrt.svg"
+                alt=""
+              />
             </a>
           </div>
         </div>
@@ -62,34 +73,63 @@
             <!-- /Wishlist -->
 
             <!-- Cart -->
-            <div class="dropdown" >
-              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor: pointer;">
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                aria-expanded="true"
+                style="cursor: pointer"
+              >
                 <i class="fa fa-shopping-cart"></i>
                 <span>Your Cart</span>
-                <div class="qty">{{cartData.data[0].numInCart !== 0 ? cartData.data.length : 0}}</div>
+                <div class="qty">
+                  {{
+                    cartData.data[0].numInCart !== 0 ? cartData.data.length : 0
+                  }}
+                </div>
               </a>
-              <div class="cart-dropdown" >
+              <div class="cart-dropdown">
                 <div class="cart-list" *ngIf="cartData.data[0].numInCart !== 0">
-                  <div class="product-widget" *ngFor="let c of cartData.data; let i=index">
+                  <div
+                    class="product-widget"
+                    *ngFor="let c of cartData.data; let i = index"
+                  >
                     <div class="product-img">
-                      <img src="{{c.product?.image}}" alt="" width="20px">
+                      <img src="{{ c.product?.image }}" alt="" width="20px" />
                     </div>
                     <div class="product-body">
-                      <h3 class="product-name"><a href="#">{{c.product?.name}}</a></h3>
-                      <h4 class="product-price"><span class="qty">{{c.numInCart}} x </span>{{c.product?.price | currency:'USD'}}</h4>
+                      <h3 class="product-name">
+                        <a href="#">{{ c.product?.name }}</a>
+                      </h3>
+                      <h4 class="product-price">
+                        <span class="qty">{{ c.numInCart }} x </span
+                        >{{ c.product?.price | currency: "USD" }}
+                      </h4>
                     </div>
-                    <button class="delete" (click)="cartService.DeleteProductFromCart(i)"><i class="fa fa-close"></i></button>
+                    <button
+                      class="delete"
+                      (click)="cartService.DeleteProductFromCart(i)"
+                    >
+                      <i class="fa fa-close"></i>
+                    </button>
                   </div>
-
-
                 </div>
                 <div class="cart-summary">
-                  <small>{{cartData.data[0].numInCart !== 0 ? cartData.data.length : 0}} Item(s) selected</small>
-                  <h5>TOTAL : {{cartTotal | currency:'USD'}}</h5>
+                  <small
+                    >{{
+                      cartData.data[0].numInCart !== 0
+                        ? cartData.data.length
+                        : 0
+                    }}
+                    Item(s) selected</small
+                  >
+                  <h5>TOTAL : {{ cartTotal | currency: "USD" }}</h5>
                 </div>
                 <div class="cart-btns">
                   <a routerLink="/cart">View Cart</a>
-                  <a routerLink="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                  <a routerLink="/checkout"
+                    >Checkout <i class="fa fa-arrow-circle-right"></i
+                  ></a>
                 </div>
               </div>
             </div>
@@ -123,27 +163,37 @@
     <div id="responsive-nav">
       <!-- NAV -->
       <ul class="main-nav nav py-3">
-        <li><a routerLink="/home" routerLinkActive="active" routerLinkActiveOptions="{exact:true}">Home</a></li>
-        <li><a routerLink="/product"  routerLinkActive="active">Courses</a></li>
-       <li><a routerLink="/footer">Contact Us</a></li> 
-        
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="active"
+            routerLinkActiveOptions="{exact:true}"
+            >Home</a
+          >
+        </li>
+        <li><a routerLink="/product" routerLinkActive="active">Courses</a></li>
+        <li><a routerLink="/footer">Contact Us</a></li>
       </ul>
       <div class="reslog">
         <div></div>
         <div class="signup float-right row-md-2 pull-right">
           <a href="#">
-            <img src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/000000/external-User-essential-collection-bearicons-glyph-bearicons.png"/>
+            <img
+              src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/000000/external-User-essential-collection-bearicons-glyph-bearicons.png"
+            />
             <span>New User</span>
           </a>
         </div>
         <div class="login two float-right row-md-2">
           <a href="#">
-            <img src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/>
+            <img
+              src="https://img.icons8.com/color/48/000000/login-rounded-right.png"
+            />
             <span>Login</span>
           </a>
         </div>
       </div>
-      
+
       <!-- /NAV -->
     </div>
     <!-- /responsive-nav -->

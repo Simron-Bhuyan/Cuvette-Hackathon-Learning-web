@@ -1,1 +1,29 @@
-<!-- empty file -->
+<div class="container">
+
+    <div class="row pt-5 pb-5 ">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Login</h3>
+                    
+                </div>
+                <div class="card-body mx-4">
+                    <form class="form">
+                        <div class="form-group mt-4">
+                            <label for="">Email</label>
+                            <input name="email" type="text" [(ngModel)]= "loginUserData.email" name="email"  class="form-control" required>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label for="">Password</label>
+                            <input name="password" type="password" [(ngModel)]= "loginUserData.password" name="password" class="form-control" required>
+                        </div>
+                        <div>
+                            <button (click)="loginUser()" type="button" class="btn btn-success mt-4 mb-3">Login</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
